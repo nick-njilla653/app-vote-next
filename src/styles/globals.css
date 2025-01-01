@@ -1,0 +1,51 @@
+/* src/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swiper Custom Styles */
+.swiper-pagination-bullet {
+  @apply bg-gray-300 opacity-50;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-blue-500 opacity-100;
+}
+
+/* Custom Animations */
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Additional Global Styles */
+body {
+  @apply text-gray-900 bg-gray-50;
+}
+
+/* Responsive Typography */
+h1 {
+  @apply text-4xl font-bold;
+}
+
+h2 {
+  @apply text-3xl font-semibold;
+}
+
+/* Utility Classes */
+.text-gradient {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text;
+}
