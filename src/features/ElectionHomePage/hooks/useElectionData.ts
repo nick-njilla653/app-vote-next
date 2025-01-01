@@ -7,6 +7,9 @@ import {
   MainFeature
 } from '../types/home';
 
+import ElectionCalendarPage from '@/features/ElectionCalendarPage/components/ElectionCalendarPage';
+
+
 import {
   MapIcon,
   UserGroupIcon,
@@ -64,7 +67,7 @@ export const useElectionData = () => {
     }
   ];
 
-  const mainFeatures: MainFeature[] = [
+  const mainFeatures = [
     {
       title: 'Carte Électorale',
       description: 'Explorez la carte interactive des bureaux de vote',
@@ -85,7 +88,7 @@ export const useElectionData = () => {
       title: 'Calendrier',
       description: 'Dates importantes du processus électoral',
       icon: CalendarIcon,
-      path: '/calendar',
+      path: '/ElectionCalendarPage',
       gradient: 'linear-gradient(135deg, #f6d365, #fda085)',
       animation: 'slide-left'
     }

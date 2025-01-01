@@ -10,6 +10,10 @@ import AdminInterface from '@/features/AdminInterface/components/AdminInterface'
 import ScrutateurInterface from '@/features/ScrutateurInterface/components/ScrutateurInterface';
 import SurveillanceInterface from '@/features/SurveillanceInterface/components/SurveillanceInterface';
 import VoterInterface from '@/features/VoterInterface/components/VoterInterface';
+import TransversalInterface from '@/features/TransversalInterface/components/TransversalInterface';
+import IntegrationInterface from '@/features/IntegrationInterface/components/IntegrationInterface';
+import ElectionCalendarPage from '@/features/ElectionCalendarPage/components/ElectionCalendarPage';
+
 
 export default function Home() {
   const [activeInterface, setActiveInterface] = useState<string | null>(null);
@@ -17,11 +21,12 @@ export default function Home() {
   const interfaces = [
     { name: "Admin Interface", path: "/AdminInterface" },
     { name: "Election Home Page", path: "/ElectionHomePage" },
-    { name: "Integration Interface", path: "/integration" },
+    { name: "Integration Interface", path: "/IntegrationInterface" },
     { name: "Scrutateur Interface", path: "/ScrutateurInterface" },
     { name: "Surveillance Interface", path: "/SurveillanceInterface" },
-    { name: "Transversal Interface", path: "/transversal" },
+    { name: "Transversal Interface", path: "/TransversalInterface" },
     { name: "Voter Interface", path: "/VoterInterface" },
+    { name: "Election Calendar Page", path: "/ElectionCalendarPage" },
     { name: "Login Page", path: "/login" }
   ];
 
@@ -54,6 +59,19 @@ export default function Home() {
   if (activeInterface === "Voter Interface") {
     return <VoterInterface />;
   }
+
+  if (activeInterface === "Transversal Interface") {
+    return <TransversalInterface />;
+  }
+
+  if (activeInterface === "Integration Interface") {
+    return <IntegrationInterface />;
+  }
+
+  if (activeInterface === "Election Calendar Page") {
+    return <ElectionCalendarPage />;
+  }
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">

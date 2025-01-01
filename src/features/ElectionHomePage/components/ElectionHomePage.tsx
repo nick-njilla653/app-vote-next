@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { 
   ArrowRightIcon, 
   MapIcon, 
-  UsersIcon, 
+  UsersIcon,  
+  UserGroupIcon,
   CalendarIcon, 
   InformationCircleIcon,
   BellIcon 
@@ -27,6 +28,13 @@ const ElectionHomePage: React.FC = () => {
     searchText, 
     setSearchText 
   } = useElectionData();
+
+  const updatedMainFeatures = mainFeatures.map(feature => 
+    feature.title === 'Calendrier' 
+      ? { ...feature, path: '/calendar' } 
+      : feature
+  );
+
   const { isRefreshing, handleRefresh } = useRefreshData();
 
   return (
@@ -65,7 +73,7 @@ const ElectionHomePage: React.FC = () => {
           }}
           className="feature-carousel"
         >
-          {mainFeatures.map((feature, index) => (
+          {updatedMainFeatures.map((feature, index) => (
             <SwiperSlide key={index}>
               <Link href={feature.path} className="block">
                 <div 
@@ -75,7 +83,7 @@ const ElectionHomePage: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       {feature.icon === MapIcon && <MapIcon className="h-10 w-10 text-white" />}
-                      {feature.icon === UsersIcon && <UsersIcon className="h-10 w-10 text-white" />}
+                      {feature.icon === UserGroupIcon && <UserGroupIcon className="h-10 w-10 text-white" />}
                       {feature.icon === CalendarIcon && <CalendarIcon className="h-10 w-10 text-white" />}
                       <h3 className="text-xl font-bold text-white mt-4">{feature.title}</h3>
                       <p className="text-white opacity-80">{feature.description}</p>
