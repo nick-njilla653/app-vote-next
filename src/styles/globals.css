@@ -1,7 +1,27 @@
 /* src/styles/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply text-gray-900 bg-gray-50;
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text;
+  }
+}
 
 /* Swiper Custom Styles */
 .swiper-pagination-bullet {
@@ -10,6 +30,20 @@
 
 .swiper-pagination-bullet-active {
   @apply bg-blue-500 opacity-100;
+}
+
+/* Leaflet Map Styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
 }
 
 /* Custom Animations */
@@ -29,23 +63,4 @@
   100% {
     transform: translateY(0);
   }
-}
-
-/* Additional Global Styles */
-body {
-  @apply text-gray-900 bg-gray-50;
-}
-
-/* Responsive Typography */
-h1 {
-  @apply text-4xl font-bold;
-}
-
-h2 {
-  @apply text-3xl font-semibold;
-}
-
-/* Utility Classes */
-.text-gradient {
-  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text;
 }

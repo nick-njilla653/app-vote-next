@@ -13,6 +13,7 @@ import VoterInterface from '@/features/VoterInterface/components/VoterInterface'
 import TransversalInterface from '@/features/TransversalInterface/components/TransversalInterface';
 import IntegrationInterface from '@/features/IntegrationInterface/components/IntegrationInterface';
 import ElectionCalendarPage from '@/features/ElectionCalendarPage/components/ElectionCalendarPage';
+import ElectoralMapPage from '@/features/ElectoralMapPage/components/ElectoralMapPage';
 
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
     { name: "Transversal Interface", path: "/TransversalInterface" },
     { name: "Voter Interface", path: "/VoterInterface" },
     { name: "Election Calendar Page", path: "/ElectionCalendarPage" },
+    { name: "Electoral Map Page", path: "/ElectoralMapPage" },
     { name: "Login Page", path: "/login" }
   ];
 
@@ -70,6 +72,10 @@ export default function Home() {
 
   if (activeInterface === "Election Calendar Page") {
     return <ElectionCalendarPage />;
+  }
+
+  if (activeInterface === "Electoral Map Page") {
+    return <ElectoralMapPage />;
   }
 
   return (
